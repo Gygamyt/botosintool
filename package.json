@@ -5,19 +5,25 @@
   "main": "index.js",
   "scripts": {
     "build": "tsc",
-    "start": "node build/server.js",
-    "start:dev": "nodemon --watch src -e ts --exec ts-node src/server.ts"
+    "start": "node build/index.js",
+    "start:dev": "nodemon --watch src -e ts --exec ts-node src/index.ts",
+    "start:dev:silent": "npx dotenvx run -- ts-node-dev --respawn src/index.ts",
+    "start:tunnel": "ngrok http 3000"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "type": "commonjs",
   "dependencies": {
+    "@dotenvx/dotenvx": "^1.51.0",
     "@google-apps/chat": "^0.19.0",
     "@google-cloud/pubsub": "^5.2.0",
     "axios": "^1.12.2",
+    "dotenv": "^17.2.2",
     "express": "^5.1.0",
-    "google-auth-library": "^10.3.0"
+    "google-auth-library": "^10.3.0",
+    "googleapis": "^160.0.0",
+    "zod": "^4.1.11"
   },
   "devDependencies": {
     "@types/express": "^5.0.3",
